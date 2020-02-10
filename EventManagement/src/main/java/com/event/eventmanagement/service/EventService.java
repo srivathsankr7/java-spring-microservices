@@ -13,7 +13,7 @@ public interface EventService {
 	
 	public Event getEvent(int eventId);
 	
-	public void addEvent(Event event);
+	public void addEvent(List<Event> event);
 	
 	public void updateEvent(int eventId, Event event);
 	

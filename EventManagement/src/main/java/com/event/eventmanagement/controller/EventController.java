@@ -1,6 +1,7 @@
 package com.event.eventmanagement.controller;
 
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,28 +32,31 @@ public class EventController {
 	}
 	
 	@GetMapping("/events")
-	public List<Event> getEvents() {
-		return eventService.getEvents();
+	public ResponseEntity<List<Event>> getEvents() {
+		return new ResponseEntity<List<Event>>(eventService.getEvents(), HttpStatus.FOUND);
 	}
 
 	@GetMapping("/events/{eventId}")
-	public Event getEvent(@PathVariable("eventId") int eventId) {
-		return eventService.getEvent(eventId);
+	public ResponseEntity<Event> getEvent(@PathVariable("eventId") int eventId) {
+		return new ResponseEntity<Event>(eventService.getEvent(eventId), HttpStatus.FOUND);
 	}
 	
 	@PostMapping("/events/")
-	public void addEvent(@RequestBody Event event) {
+	public ResponseEntity<Event> addEvent(@RequestBody List<Event> event) {
 		eventService.addEvent(event);
+		return new ResponseEntity<Event>(HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/events/{eventId}")
-	public void updateEvent(@PathVariable("eventId") int eventId, @RequestBody Event event) {
+	public ResponseEntity<Event> updateEvent(@PathVariable("eventId") int eventId, @RequestBody Event event) {
 		eventService.updateEvent(eventId, event);
+		return new ResponseEntity<Event>(HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/events/{eventId}")
-	public void deleteEvent(@PathVariable("eventId") int eventId) {
+	public ResponseEntity<Event> deleteEvent(@PathVariable("eventId") int eventId) {
 		eventService.deleteEvent(eventId);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 }

@@ -29,8 +29,8 @@ public class EventRepositoryImpl implements EventRepository{
 	}
 
 	@Override
-	public void addEvent(Event event) {
-		eventList.add(event);	
+	public void addEvent(List<Event> event) {
+		eventList.addAll(event);	
 	}
 
 	@Override
