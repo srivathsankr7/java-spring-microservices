@@ -39,6 +39,7 @@ public class EventRepositoryImpl implements EventRepository{
 		event.setName(newEvent.getName());
 		event.setDescription(newEvent.getDescription());
 		event.setPrice(newEvent.getPrice());
+		event.setSeats(newEvent.getSeats());
 	}
 
 	@Override
