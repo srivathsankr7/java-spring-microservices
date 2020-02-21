@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "45b3c86e-6ec5-4f8e-9c56-080f8148649d",
+		"name": "EventManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"eventId\": 1,\n    \"name\": \"AutoExpo\",\n    \"description\": \"Auto expo event 2020\",\n    \"price\": 1000,\n    \"seats\": 50\n},\n{\n\t\"eventId\": 2,\n\t\"name\" : \"Meetup Event\",\n\t\"description\": \"Spring meetup on Feb 2020 at Bangalore\",\n\t\"price\": 100,\n\t\"seats\": 100\n}]"
+				},
+				"url": {
+					"raw": "localhost:8081/events/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEvent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8081/events/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"events",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEventById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8081/events/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEvent",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"eventId\": 1,\n    \"name\": \"AutoExpo\",\n    \"description\": \"Auto expo event 2020\",\n    \"price\": 200,\n    \"seats\": 200\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/events/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEvent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8081/events/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

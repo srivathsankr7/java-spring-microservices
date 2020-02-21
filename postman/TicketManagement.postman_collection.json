@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "70239484-ff0a-41e4-bf00-aeaeeff54f4d",
+		"name": "TicketManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ticket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableEvents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/events",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tickets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ticketId\": 2,\n\t\"users\": [\n\t\t{\n\t\t\t\"name\": \"xyz\",\n\t\t\t\"age\": 20,\n\t\t\t\"gender\": \"male\"\n\t\t},\n\t\t{\n\t\t\t\"name\": \"efg\",\n\t\t\t\"age\": 25,\n\t\t\t\"gender\": \"male\"\n\t\t}\n\t],\n\t\"eventId\": 2\n}"
+				},
+				"url": {
+					"raw": "localhost:8082/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tickets/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/tickets/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
